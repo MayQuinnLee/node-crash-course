@@ -8,31 +8,41 @@ const path = require("path");
 // });
 
 //Create and write file (overwrite file)
-fs.writeFile(
-  path.join(__dirname, "./test", "hello.txt"),
-  "Hello World!",
-  (err) => {
-    if (err) throw err;
-    console.log("File created and written to..");
+// fs.writeFile(
+//   path.join(__dirname, "./test", "hello.txt"),
+//   "Hello World!",
+//   (err) => {
+//     if (err) throw err;
+//     console.log("File created and written to..");
 
-    //File append (Since this is asynchronous, callback)
-    fs.appendFile(
-      path.join(__dirname, "./test", "hello.txt"),
-      " I love Node.js",
-      (err) => {
-        if (err) throw err;
-        console.log("File created and written to..");
-      }
-    );
-  }
-);
+//     //File append (Since this is asynchronous, callback)
+//     fs.appendFile(
+//       path.join(__dirname, "./test", "hello.txt"),
+//       " I love Node.js",
+//       (err) => {
+//         if (err) throw err;
+//         console.log("File created and written to..");
+//       }
+//     );
+//   }
+// );
 
 //Read File
-fs.readFile(
+// fs.readFile(
+//   path.join(__dirname, "./test", "hello.txt"),
+//   "utf8",
+//   (err, data) => {
+//     if (err) throw err;
+//     console.log(data);
+//   }
+// );
+
+//Rename File
+fs.rename(
   path.join(__dirname, "./test", "hello.txt"),
-  "utf8",
-  (err, data) => {
+  path.join(__dirname, "./test", "helloWorld.txt"),
+  (err) => {
     if (err) throw err;
-    console.log(data);
+    console.log("File renamed");
   }
 );
